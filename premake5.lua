@@ -1,8 +1,9 @@
 project "assimp"
 	kind "StaticLib"
-	language "C++"
-	cppdialect "C++17"
-	staticruntime "on"
+    language "C++"
+	if(staticRuntime) then
+		staticruntime "on"
+	end
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -90,7 +91,6 @@ project "assimp"
 		"ASSIMP_BUILD_NO_EMBEDTEXTURES_PROCESS",
 		"ASSIMP_BUILD_NO_GLOBALSCALE_PROCESS",
 	}
-	
 	files
 	{
 		"include/**",
