@@ -1,6 +1,7 @@
 project "assimp"
 	kind "StaticLib"
     language "C++"
+	cppdialect "C++17"
 	if(staticRuntime) then
 		staticruntime "on"
 	end
