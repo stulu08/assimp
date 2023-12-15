@@ -2,9 +2,7 @@ project "assimp"
 	kind "StaticLib"
     language "C++"
 	cppdialect "C++17"
-	if(staticRuntime) then
-		staticruntime "on"
-	end
+	staticruntime "off"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
